@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Physical & Humanoid Robotics',
+  title: 'Physical and Humanoid Robotics',
   tagline: 'Robots are cool',
   favicon: 'img/favicon.ico',
 
