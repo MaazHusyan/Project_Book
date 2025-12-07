@@ -21,7 +21,7 @@ learning_objectives: [
 
 ## Learning Objectives
 - [ ] Understand degrees of freedom analysis for robotic systems
-- [ ] Apply Grübler's equation to mobile mechanisms
+- [ ] Apply Grübler&apos;s equation to mobile mechanisms
 - [ ] Design kinematic chains for humanoid robots
 - [ ] Analyze redundancy and task space requirements
 - [ ] Optimize joint configurations for specific applications
@@ -30,7 +30,7 @@ learning_objectives: [
 
 Degrees of freedom (DOF) represent the independent parameters that define the configuration of a robotic system. For humanoid robots, understanding and optimizing DOF is crucial for achieving human-like mobility and manipulation capabilities. The human body possesses over 600 muscles controlling approximately 244 DOF, creating an incredibly flexible and adaptable system.
 
-This module explores the mathematical foundations of DOF analysis, kinematic chain design principles, and optimization strategies for humanoid robots. We'll examine how to balance complexity with functionality, ensuring robots have sufficient mobility without unnecessary mechanical complexity or control challenges.
+This module explores the mathematical foundations of DOF analysis, kinematic chain design principles, and optimization strategies for humanoid robots. We&apos;ll examine how to balance complexity with functionality, ensuring robots have sufficient mobility without unnecessary mechanical complexity or control challenges.
 
 ## Degrees of Freedom Fundamentals
 
@@ -64,7 +64,7 @@ Different joint types contribute different numbers of DOF:
 - Examples: shoulder elevation with rotation
 
 **Planar Joint**: 3 DOF - translation in plane plus rotation about normal
-- Allows movement in 2D plane
+- Allows movement in two-dimensional plane
 - Used for mobile platforms
 - Examples: planar mechanisms
 
@@ -80,21 +80,21 @@ Different joint types contribute different numbers of DOF:
 
 ### Grübler's Equation
 
-Grübler's equation calculates the theoretical DOF for planar and spatial mechanisms:
+Grübler&apos;s equation calculates the theoretical DOF for planar and spatial mechanisms:
 
 **Planar Mechanisms**:
-DOF = 3(N - 1) - 2J₁ - J₂
+DOF = 3(N - 1) - 2*J1 - J2
 
 **Spatial Mechanisms**:
-DOF = 6(N - 1) - 5J₁ - 4J₂ - 3J₃ - 2J₄ - J₅
+DOF = 6(N - 1) - 5*J1 - 4*J2 - 3*J3 - 2*J4 - J5
 
 Where:
 - N = number of links (including ground)
-- J₁ = number of 1-DOF joints
-- J₂ = number of 2-DOF joints
-- J₃ = number of 3-DOF joints
-- J₄ = number of 4-DOF joints
-- J₅ = number of 5-DOF joints
+- J1 = number of 1-DOF joints
+- J2 = number of 2-DOF joints
+- J3 = number of 3-DOF joints
+- J4 = number of 4-DOF joints
+- J5 = number of 5-DOF joints
 
 ```python
 import numpy as np
@@ -267,7 +267,7 @@ Workspace represents the reachable space of robot end-effectors:
 
 **Reachable Workspace**: All positions end-effector can reach
 - Determined by joint limits and link lengths
-- Complex 3D volume for spatial mechanisms
+- Complex three-dimensional volume for spatial mechanisms
 - Critical for task planning
 
 **Dexterous Workspace**: Positions where end-effector can achieve all orientations
@@ -732,7 +732,7 @@ Optimize robot configuration for specific task:
 
 Degrees of freedom analysis is fundamental to humanoid robot design, determining mobility, manipulation capabilities, and control complexity. Understanding kinematic chains, workspace characteristics, and redundancy resolution enables engineers to design robots that can effectively perform human-like tasks.
 
-Key concepts include Grübler's equation for DOF calculation, workspace analysis for reachability assessment, redundancy resolution for handling extra DOF, and task space optimization for specific applications. The balance between complexity and functionality determines robot performance and practicality.
+Key concepts include Grübler&apos;s equation for DOF calculation, workspace analysis for reachability assessment, redundancy resolution for handling extra DOF, and task space optimization for specific applications. The balance between complexity and functionality determines robot performance and practicality.
 
 As humanoid robots become more sophisticated, DOF analysis continues to evolve, incorporating soft robotics, continuum mechanisms, and bio-inspired designs. The future of humanoid robotics lies in optimizing DOF not just for capability, but for efficiency, safety, and human-like naturalness of movement.
 
