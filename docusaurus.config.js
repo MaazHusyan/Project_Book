@@ -63,10 +63,16 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Custom robotics theme colors
+      colors: {
+        primary: '#0066cc',
+        secondary: '#00d4ff',
+      },
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       colorMode: {
-        respectPrefersColorScheme: true,
+        defaultMode: 'dark',
+        respectPrefersColorScheme: false,
       },
       navbar: {
         title: 'My Site',
