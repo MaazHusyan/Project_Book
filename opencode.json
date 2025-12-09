@@ -1,0 +1,23 @@
+{
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true,
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-47d5aba3-d032-4ece-9dae-29775e89f142"
+      }
+    },
+    "filesystem": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "/home/maaz/Desktop/Hackathon/project01/Robotics-Book"],
+      "enabled": true
+    },
+    "gh_grep": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-gh-grep"],
+      "enabled": true
+    }
+  },
+  "$schema": "https://opencode.ai/config.json"
+}

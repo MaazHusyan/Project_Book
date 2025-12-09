@@ -71,6 +71,38 @@
 - [ ] Theory connected to practice through working code examples
 - [ ] Industry case studies or hands-on projects included
 
+### Single Branch Discipline Compliance
+- [ ] All development occurs exclusively on "opencode-ai" branch
+- [ ] No other branches created, checked out, or referenced
+- [ ] All /sp.* commands respect branch discipline
+
+### Content Protection Compliance
+- [ ] No existing book content files modified without explicit permission
+- [ ] Files under /docs/, /src/pages/, and MDX files protected
+- [ ] Placeholder content replacement only when authorized
+
+### PHR Enforcement Compliance
+- [ ] Every /sp.* command creates complete PHR entry
+- [ ] PHR correctly placed in history/prompts/ folder
+- [ ] Stage-based routing followed (constitution/, robotics-book/, general/)
+
+### Git Discipline Compliance
+- [ ] Git commands prompted after every /sp.* command that modifies files
+- [ ] Clear commit message provided with exact commands
+- [ ] No auto-commit or auto-push without explicit confirmation
+- [ ] Next phase waits for human confirmation of push completion
+
+### Versioning & Traceability Compliance
+- [ ] All generated files include header comment with constitution version
+- [ ] Date and time of generation included
+- [ ] Git branch specified (must be opencode-ai)
+- [ ] Link to PHR entry provided
+
+### Preservation of Human Oversight Compliance
+- [ ] AI generates drafts but final judgment remains with human owner
+- [ ] No assumption of approval without explicit confirmation
+- [ ] Quality, accuracy, and style decisions reserved for human
+
 ## Project Structure
 
 ### Documentation (this feature)

@@ -1,8 +1,8 @@
 <!--
 Sync Impact Report:
-- Version change: 0.0.0 → 1.0.0 (MAJOR - Initial constitution creation)
-- Modified principles: None (initial creation)
-- Added sections: All principles and governance sections
+- Version change: 1.0.0 → 2.0.0 (MAJOR - Added unbreakable governance rules)
+- Modified principles: None (all existing preserved)
+- Added sections: Single Branch Discipline, Content Protection, PHR Enforcement, Git Discipline, Versioning & Traceability, Preservation of Human Oversight
 - Removed sections: None
 - Templates requiring updates: ⚠ pending - plan-template.md, spec-template.md, tasks-template.md need robotics-specific alignment
 - Follow-up TODOs: None
@@ -35,6 +35,38 @@ All content changes MUST use specifications as first-class artifacts, with AI-ge
 
 ### Real-World Application Focus
 Every technical concept MUST be accompanied by practical examples, case studies, or implementation scenarios that demonstrate real-world applicability. Theory MUST be immediately connected to practice through working code examples, industry case studies, or hands-on projects.
+
+## Governance Principles
+
+### Single Branch Discipline
+All development, specification, planning, task generation and implementation MUST occur exclusively on the Git branch named "opencode-ai". No other branch may ever be created, checked out, or referenced by any /sp.* command or generated script.
+
+### Content Protection
+No existing file containing book content (any file under /docs/, /src/pages/, or any MDX/MDX file) may be modified, overwritten, or deleted without explicit written permission from the human owner in the same command. Placeholder or dummy content may be replaced only when explicitly authorised.
+
+### Prompt History Record (PHR) Enforcement
+Every single /sp.* command (constitution, specify, plan, tasks, implement, etc.) MUST automatically create a complete, correctly placed Prompt History Record in the history/prompts/ folder using the official stage-based routing:
+- /sp.constitution → history/prompts/constitution/
+- /sp.specify, /sp.plan, /sp.tasks, /sp.implement → history/prompts/robotics-book/
+- All others → history/prompts/general/
+Failure to create a valid PHR is a constitutional violation.
+
+### Git Discipline After Every /sp Command
+After completion of ANY /sp.* command that modifies files, the system MUST:
+1. Prompt the human with the exact git commands to run
+2. Clearly state: "Please run: git add . && git commit -m '<suggested message>' && git push origin opencode-ai"
+3. Never auto-commit or auto-push without explicit confirmation
+4. Never proceed to the next phase until the human confirms the push is done
+
+### Versioning & Traceability
+All generated tasks.md, plan.md, spec.md and constitution.md MUST include a header comment with:
+- Constitution version applied
+- Date and time of generation
+- Git branch used (must be opencode-ai)
+- Link to the PHR entry
+
+### Preservation of Human Oversight
+AI may generate drafts and execute tasks, but final judgement on quality, accuracy, and style remains with the human owner. The AI must never assume approval.
 
 ## Content Standards
 
@@ -92,4 +124,4 @@ All content MUST comply with ethical standards, legal requirements, and accessib
 ### Versioning Policy
 Constitution follows semantic versioning: MAJOR for backward-incompatible changes, MINOR for new principles or sections, PATCH for clarifications and corrections. All changes MUST be documented in git commit history with clear rationale and impact assessment.
 
-**Version**: 1.0.0 | **Ratified**: 2025-12-07 | **Last Amended**: 2025-12-07
+**Version**: 2.0.0 | **Ratified**: 2025-12-07 | **Last Amended**: 2025-12-10

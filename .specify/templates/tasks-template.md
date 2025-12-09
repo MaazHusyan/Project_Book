@@ -49,9 +49,12 @@ description: "Task list template for feature implementation"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project structure per implementation plan
-- [ ] T002 Initialize [language] project with [framework] dependencies
-- [ ] T003 [P] Configure linting and formatting tools
+- [ ] T001 Verify current branch is "opencode-ai" before proceeding
+- [ ] T002 Create project structure per implementation plan
+- [ ] T003 Initialize [language] project with [framework] dependencies
+- [ ] T004 [P] Configure linting and formatting tools
+- [ ] T005 Create PHR entry for this task generation in history/prompts/robotics-book/
+- [ ] T006 Add versioning header to all generated files (constitution v2.0.0, date, branch, PHR link)
 
 ---
 
@@ -157,6 +160,10 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
 - [ ] TXXX Security hardening
 - [ ] TXXX Run quickstart.md validation
+- [ ] TXXX Verify all content protection rules followed (no unauthorized modifications)
+- [ ] TXXX Validate all PHR entries created and correctly placed
+- [ ] TXXX Prepare git commit commands for human review and approval
+- [ ] TXXX Final human oversight validation before completion
 
 ---
 

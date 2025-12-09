@@ -117,6 +117,16 @@
 - **QR-003**: Content MUST be accessible to readers with visual impairments
 - **QR-004**: AI-generated content MUST include minimum 20% human review and refinement
 
+### Governance Requirements
+
+- **GR-001**: All development MUST occur exclusively on "opencode-ai" branch
+- **GR-002**: No existing book content files may be modified without explicit human permission
+- **GR-003**: Every /sp.* command MUST create a complete PHR entry in correct location
+- **GR-004**: Git commands MUST be prompted after every /sp.* command that modifies files
+- **GR-005**: All generated files MUST include header with constitution version, date, branch, and PHR link
+- **GR-006**: Final judgment on quality, accuracy, and style remains with human owner
+- **GR-007**: No auto-commit or auto-push without explicit human confirmation
+
 ### Key Entities *(include if feature involves data)*
 
 - **[Entity 1]**: [What it represents, key attributes without implementation]
