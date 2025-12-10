@@ -62,11 +62,35 @@ description: "Task list template for feature implementation"
 - [ ] T011 [P] Setup Qdrant Cloud Free Tier for vector storage
 - [ ] T012 [P] Configure Better Auth for authentication system
 - [ ] T013 [P] Setup OpenAI API for multilingual translation support
-- [ ] T014 [P] Implement fully functional RAG chatbot embedding [100 points]
+- [ ] T014 [P] Implement Integrated RAG Chatbot [50 points]
 - [ ] T015 [P] Configure OpenAI Agents/ChatKit SDKs with FastAPI backend
-- [ ] T016 [P] Setup ingestion pipelines for book content processing
-- [ ] T017 [P] Implement chatbot UI as floating widget or /chat page
-- [ ] T018 [P] Ensure no modification to existing /docs/*.mdx content
+- [ ] T016 [P] Setup Neon Serverless Postgres with pgvector for embeddings
+- [ ] T017 [P] Configure Qdrant Cloud Free Tier for vector storage
+- [ ] T018 [P] Implement chatbot UI as floating widget or /chat page
+- [ ] T019 [P] Ensure chatbot answers questions about book content
+- [ ] T020 [P] Ensure chatbot processes user-selected/highlighted text only
+- [ ] T021 [P] Implement opencode Code Subagents & Reusable Skills [50 points]
+- [ ] T022 [P] Replace all occurrences of "Claude" with "opencode" in templates
+- [ ] T023 [P] Replace all occurrences of "Claude" with "opencode" in generated files
+- [ ] T024 [P] Create reusable opencode Code Subagents for repeatable tasks
+- [ ] T025 [P] Implement Agent Skills for consistent tooling
+- [ ] T026 [P] Implement Authentication + Background Survey [50 points]
+- [ ] T027 [P] Setup Better Auth for signup/signin functionality
+- [ ] T028 [P] Create custom signup form for software/hardware background
+- [ ] T029 [P] Implement user profiles and background storage
+- [ ] T030 [P] Integrate authentication system with Docusaurus
+- [ ] T031 [P] Implement Personalization Toggle per Chapter [50 points]
+- [ ] T032 [P] Add per-chapter personalization buttons
+- [ ] T033 [P] Implement content adaptation based on user background
+- [ ] T034 [P] Show advanced modules for expert users
+- [ ] T035 [P] Store and apply user preferences consistently
+- [ ] T036 [P] Implement Urdu Translation Toggle per Chapter [50 points]
+- [ ] T037 [P] Add per-chapter Urdu translation buttons
+- [ ] T038 [P] Integrate OpenAI API for translation functionality
+- [ ] T039 [P] Preserve original English content
+- [ ] T040 [P] Provide translations as overlays or toggles
+- [ ] T041 [P] Ensure existing /docs/ folder and files remain sacred and untouchable
+- [ ] T042 [P] Verify no changes to folder's content and structure without permission
 
 ---
 
@@ -176,15 +200,26 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] TXXX Validate all PHR entries created and correctly placed
 - [ ] TXXX Prepare git commit commands for human review and approval
 - [ ] TXXX Final human oversight validation before completion
-- [ ] TXXX [P] Implement opencode CLI exclusive agent workflows for consistent tooling [BONUS-50]
-- [ ] TXXX [P] Embed RAG chatbot in Docusaurus sidebar widget or /chat page
-- [ ] TXXX [P] Implement user text highlights for RAG queries
-- [ ] TXXX [P] Setup Better Auth with custom signup forms for software/hardware background
-- [ ] TXXX [P] Implement user profile personalization (advanced modules for experts) [BONUS-50]
-- [ ] TXXX [P] Add per-chapter personalization toggle buttons [BONUS-50]
-- [ ] TXXX [P] Implement per-chapter Urdu translation buttons [BONUS-50]
-- [ ] TXXX [P] Configure translation overlays/toggles preserving original English
-- [ ] TXXX Track and validate all bonus point implementations with [BONUS-XX] labels
+- [ ] TXXX [P] Validate Integrated RAG Chatbot implementation [50 points]
+- [ ] TXXX [P] Test chatbot answers questions about book content
+- [ ] TXXX [P] Test chatbot processes user-selected/highlighted text only
+- [ ] TXXX [P] Validate opencode Code Subagents implementation [50 points]
+- [ ] TXXX [P] Verify all "Claude" references replaced with "opencode"
+- [ ] TXXX [P] Test reusable opencode Code Subagents functionality
+- [ ] TXXX [P] Validate Authentication + Background Survey implementation [50 points]
+- [ ] TXXX [P] Test Better Auth signup/signin functionality
+- [ ] TXXX [P] Verify custom signup form collects background information
+- [ ] TXXX [P] Validate Personalization Toggle implementation [50 points]
+- [ ] TXXX [P] Test per-chapter personalization buttons functionality
+- [ ] TXXX [P] Verify content adaptation based on user background
+- [ ] TXXX [P] Validate Urdu Translation Toggle implementation [50 points]
+- [ ] TXXX [P] Test per-chapter Urdu translation buttons
+- [ ] TXXX [P] Verify OpenAI API translation functionality
+- [ ] TXXX [P] Ensure original English content preserved
+- [ ] TXXX [P] Validate content protection rules followed
+- [ ] TXXX [P] Verify single branch discipline (opencode-ai only)
+- [ ] TXXX [P] Validate automatic git discipline after /sp.* commands
+- [ ] TXXX [P] Verify feature scope limitations (no blog, multiplayer, payments)
 
 ---
 

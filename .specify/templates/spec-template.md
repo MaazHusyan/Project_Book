@@ -82,97 +82,84 @@
   Fill them out with the right functional requirements.
 -->
 
-### Educational Requirements
+### Mandatory Scope Requirements
 
-- **ER-001**: Content MUST explain concepts using simple language with technical terms defined on first use
-- **ER-002**: Content MUST include practical examples and real-world robotics case studies
-- **ER-003**: Content MUST build concepts progressively with clear learning objectives
-- **ER-004**: Content MUST be accessible to beginners to intermediate readers
+### Integrated RAG Chatbot Requirements (50 points)
 
-### Technical Accuracy Requirements
+- **RAG-001**: RAG chatbot MUST be embedded in published Docusaurus book
+- **RAG-002**: OpenAI Agents / ChatKit SDKs MUST be used for implementation
+- **RAG-003**: FastAPI backend MUST be implemented for chatbot functionality
+- **RAG-004**: Neon Serverless Postgres with pgvector MUST be configured
+- **RAG-005**: Qdrant Cloud Free Tier MUST be used for vector storage
+- **RAG-006**: Chatbot MUST answer questions about book content
+- **RAG-007**: Chatbot MUST use only text user currently selects/highlights
+- **RAG-008**: Integration MUST be via sidebar widget or dedicated /chat page
 
-- **TR-001**: All robotics content MUST be factually correct and current as of 2025
-- **TR-002**: All technical claims MUST have verifiable sources (IEEE, ROS docs, academic papers)
-- **TR-003**: Content MUST include proper citations in IEEE format with links to online sources
-- **TR-004**: Code examples MUST be tested and verified to work with specified versions
+### opencode Code Subagents Requirements (50 points)
 
-### Content Structure Requirements
+- **OCS-001**: opencode CLI MUST be used as exclusive AI agent throughout project
+- **OCS-002**: Every mention of "Claude" MUST be replaced with "opencode"
+- **OCS-003**: Reusable opencode Code Subagents MUST be created and utilized
+- **OCS-004**: Agent Skills MUST be implemented for repeatable tasks
+- **OCS-005**: Consistent tooling MUST be maintained across development activities
 
-- **SR-001**: Content MUST be organized as modular chapters in MDX format for Docusaurus
-- **SR-002**: Each chapter MUST be independently consumable while maintaining logical progression
-- **SR-003**: Content MUST be text-based only with no diagrams or visual representations
-- **SR-004**: Complex concepts MUST be explained through descriptive text and code examples
-
-### Ethics and Sustainability Requirements
-
-- **ER-001**: Content MUST incorporate robotics ethics discussions (safety, societal impact, AI bias)
-- **ER-002**: Content MUST use inclusive language with diverse global examples
-- **ER-003**: Examples MUST promote energy-efficient designs and sustainable practices
-- **ER-004**: Content MUST highlight open-source tools (Gazebo, Arduino, ROS)
-
-### Quality Assurance Requirements
-
-- **QR-001**: All content MUST pass manual technical review by subject matter experts
-- **QR-002**: Each chapter MUST include learning objectives, summary, and practical exercises
-- **QR-003**: Content MUST be accessible to readers with visual impairments
-- **QR-004**: AI-generated content MUST include minimum 20% human review and refinement
-
-### Governance Requirements
-
-- **GR-001**: All development MUST occur exclusively on "opencode-ai" branch
-- **GR-002**: No existing book content files may be modified without explicit human permission
-- **GR-003**: Every /sp.* command MUST create a complete PHR entry in correct location
-- **GR-004**: Git commands MUST be prompted after every /sp.* command that modifies files
-- **GR-005**: All generated files MUST include header with constitution version, date, branch, and PHR link
-- **GR-006**: Final judgment on quality, accuracy, and style remains with human owner
-- **GR-007**: No auto-commit or auto-push without explicit human confirmation
-
-### Enhanced AI Integration Requirements
-
-- **AI-001**: opencode CLI MUST be used as exclusive AI agent for all /sp.* commands
-- **AI-002**: No other AI agents (Claude Code, Claude, Cursor, etc.) MAY be used or referenced
-- **AI-003**: Bonus point tracking MUST be implemented with [BONUS-50] labels where applicable
-- **AI-004**: Consistent tooling and governance compliance MUST be maintained across all development activities
-
-### RAG Chatbot Requirements
-
-- **RAG-001**: RAG chatbot MUST be embedded in Docusaurus site using specified stack
-- **RAG-002**: OpenAI Agents/ChatKit SDKs MUST be integrated with FastAPI backend
-- **RAG-003**: Neon Serverless Postgres with pgvector MUST be configured for embeddings
-- **RAG-004**: Qdrant Cloud Free Tier MUST be used for vector storage
-- **RAG-005**: Chatbot MUST answer questions from book content including text highlights
-- **RAG-006**: Integration MUST be via sidebar widget or dedicated /chat page
-- **RAG-007**: Base functionality MUST provide 100 points of value
-
-### Authentication and Personalization Requirements
+### Authentication + Background Survey Requirements (50 points)
 
 - **AUTH-001**: Better Auth MUST be implemented for signup/signin functionality
-- **AUTH-002**: Custom signup form MUST collect software/hardware background information
-- **AUTH-003**: User profiles MUST be used to personalize content (advanced modules for experts)
-- **AUTH-004**: Per-chapter buttons MUST be added for personalization toggle
-- **AUTH-005**: Bonus point tracking MUST be implemented for personalization features (up to 50 points)
+- **AUTH-002**: Custom signup form MUST collect software and hardware background
+- **AUTH-003**: User profiles MUST be created and managed
+- **AUTH-004**: Background information MUST be stored for personalization use
+- **AUTH-005**: Authentication system MUST be integrated with Docusaurus
 
-### Multilingual Support Requirements
+### Personalization Toggle Requirements (50 points)
 
-- **ML-001**: Per-chapter buttons MUST be added for Urdu translation
-- **ML-002**: OpenAI API MUST be used for translation functionality
-- **ML-003**: Original English content MUST be preserved
-- **ML-004**: Translations MUST be provided as overlays or toggles
-- **ML-005**: Bonus point tracking MUST be implemented for multilingual features (up to 50 points)
+- **PER-001**: Per-chapter personalization buttons MUST be implemented
+- **PER-002**: Content adaptation MUST be based on user background
+- **PER-003**: Advanced modules MUST be shown for expert users
+- **PER-004**: Personalization toggle MUST be functional for logged-in users
+- **PER-005**: User preferences MUST be stored and applied consistently
 
-### Integrated RAG Chatbot Requirements (Requirement 2)
+### Urdu Translation Toggle Requirements (50 points)
 
-- **RAG-008**: Fully functional RAG chatbot MUST be embedded using specified stack
-- **RAG-009**: OpenAI Agents/ChatKit SDKs MUST be integrated with FastAPI backend
-- **RAG-010**: Neon Serverless Postgres with pgvector MUST be configured for embeddings
-- **RAG-011**: Qdrant Cloud Free Tier MUST be used as vector store
-- **RAG-012**: Chatbot MUST be reachable from published Docusaurus book
-- **RAG-013**: Chatbot MUST answer questions about entire book content
-- **RAG-014**: Chatbot MUST answer questions based on user-selected/highlighted text only
-- **RAG-015**: Chatbot UI MUST be embedded as floating widget or /chat page
-- **RAG-016**: No modification to existing /docs/*.mdx content permitted
-- **RAG-017**: All ingestion pipelines and backend services MUST be permitted
-- **RAG-018**: Base functionality MUST provide 100 points of value
+- **URD-001**: Per-chapter Urdu translation buttons MUST be implemented
+- **URD-002**: OpenAI API MUST be integrated for translation functionality
+- **URD-003**: Original English content MUST be preserved
+- **URD-004**: Translations MUST be provided as overlays or toggles
+- **URD-005**: Translation system MUST be functional for logged-in users
+
+### Strict Governance Requirements
+
+### Content Protection Requirements
+
+- **CPR-001**: Existing /docs/ folder and all current files MUST remain sacred and untouchable
+- **CPR-002**: No changes to folder's files content and structure without explicit permission
+- **CPR-003**: New chapter/module generation only with explicit human owner request
+
+### Single Branch Requirements
+
+- **SBR-001**: All AI work MUST happen exclusively on opencode-ai branch
+- **SBR-002**: Automatic checkout/create opencode-ai after every /sp.* command
+- **SBR-003**: No other branches created, checked out, or referenced
+
+### Git Discipline Requirements
+
+- **GIT-001**: Automatic git add all changed files after every successful /sp.* command
+- **GIT-002**: Descriptive commit messages MUST be generated automatically
+- **GIT-003**: Automatic push to origin opencode-ai after every successful /sp.* command
+- **GIT-004**: No auto-commit or auto-push without explicit confirmation
+
+### opencode Exclusive Usage Requirements
+
+- **OPN-001**: Every occurrence of "Claude" MUST be replaced with "opencode" in all templates
+- **OPN-002**: Every occurrence of "Claude" MUST be replaced with "opencode" in all generated files
+- **OPN-003**: No other AI agents mentioned or referenced anywhere
+
+### Feature Scope Limitation Requirements
+
+- **LIM-001**: No blog features MUST be implemented
+- **LIM-002**: No multiplayer features MUST be implemented
+- **LIM-003**: No payment features MUST be implemented
+- **LIM-004**: No other features beyond mandatory scope MUST be implemented
 
 ### Key Entities *(include if feature involves data)*
 

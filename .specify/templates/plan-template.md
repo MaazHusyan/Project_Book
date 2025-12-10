@@ -31,116 +31,69 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-### Educational Clarity Compliance
-- [ ] Content uses simple language with technical terms defined on first use
-- [ ] Includes practical examples and real-world robotics case studies
-- [ ] Progressive concept building with clear learning objectives
-
-### No Visual Diagrams Compliance
-- [ ] All explanations are text-based only
-- [ ] Complex concepts explained through descriptive text and code examples
-- [ ] No diagrams, flowcharts, or visual representations in any files
-
-### Technical Accuracy Compliance
-- [ ] All robotics facts verified with reliable sources (IEEE, ROS docs, academic papers)
-- [ ] Content is current as of 2025 with proper citations
-- [ ] Technical claims have verifiable sources
-
-### Modular Docusaurus Structure Compliance
-- [ ] Content organized as modular chapters in MDX format
-- [ ] Each chapter independently consumable
-- [ ] Logical progression maintained throughout book structure
-
-### Ethical and Inclusive Focus Compliance
-- [ ] Robotics ethics discussions included (safety, societal impact, AI bias)
-- [ ] Inclusive language used throughout
-- [ ] Diverse global examples represented
-
-### Sustainability in Robotics Compliance
-- [ ] Examples promote energy-efficient designs
-- [ ] Open-source tools highlighted (Gazebo, Arduino, ROS)
-- [ ] Sustainable development practices emphasized
-
-### Iterative Spec-Driven Development Compliance
-- [ ] All changes follow spec-driven workflow
-- [ ] AI-generated content includes minimum 20% human review
-- [ ] Traceability and quality control maintained
-
-### Real-World Application Focus Compliance
-- [ ] Every technical concept accompanied by practical examples
-- [ ] Theory connected to practice through working code examples
-- [ ] Industry case studies or hands-on projects included
-
-### Single Branch Discipline Compliance
-- [ ] All development occurs exclusively on "opencode-ai" branch
-- [ ] No other branches created, checked out, or referenced
-- [ ] All /sp.* commands respect branch discipline
-
-### Content Protection Compliance
-- [ ] No existing book content files modified without explicit permission
-- [ ] Files under /docs/, /src/pages/, and MDX files protected
-- [ ] Placeholder content replacement only when authorized
-
-### PHR Enforcement Compliance
-- [ ] Every /sp.* command creates complete PHR entry
-- [ ] PHR correctly placed in history/prompts/ folder
-- [ ] Stage-based routing followed (constitution/, robotics-book/, general/)
-
-### Git Discipline Compliance
-- [ ] Git commands prompted after every /sp.* command that modifies files
-- [ ] Clear commit message provided with exact commands
-- [ ] No auto-commit or auto-push without explicit confirmation
-- [ ] Next phase waits for human confirmation of push completion
-
-### Versioning & Traceability Compliance
-- [ ] All generated files include header comment with constitution version
-- [ ] Date and time of generation included
-- [ ] Git branch specified (must be opencode-ai)
-- [ ] Link to PHR entry provided
-
-### Preservation of Human Oversight Compliance
-- [ ] AI generates drafts but final judgment remains with human owner
-- [ ] No assumption of approval without explicit confirmation
-- [ ] Quality, accuracy, and style decisions reserved for human
-
-### Enhanced AI Integration Compliance
-- [ ] opencode CLI used as exclusive AI agent for all /sp.* commands
-- [ ] No other AI agents (Claude Code, Claude, Cursor, etc.) used or referenced
-- [ ] Bonus point tracking implemented with [BONUS-50] labels where applicable
-
-### RAG Chatbot Embedment Compliance
-- [ ] RAG chatbot embedded in Docusaurus site using specified stack
-- [ ] OpenAI Agents/ChatKit SDKs integrated with FastAPI backend
+### Integrated RAG Chatbot Compliance (50 points)
+- [ ] RAG chatbot embedded using OpenAI Agents/ChatKit SDKs
+- [ ] FastAPI backend implemented for chatbot functionality
 - [ ] Neon Serverless Postgres with pgvector configured for embeddings
 - [ ] Qdrant Cloud Free Tier used for vector storage
-- [ ] Chatbot answers questions from book content including text highlights
+- [ ] Chatbot answers questions about book content
+- [ ] Chatbot processes user-selected/highlighted text only
 - [ ] Integration via sidebar widget or dedicated /chat page
 
-### Authentication and Personalization Compliance
+### opencode Code Subagents Compliance (50 points)
+- [ ] opencode CLI used as exclusive AI agent throughout project
+- [ ] All mentions of "Claude" replaced with "opencode"
+- [ ] Reusable opencode Code Subagents created and utilized
+- [ ] Agent Skills implemented for repeatable tasks
+- [ ] Consistent tooling maintained across development activities
+
+### Authentication + Background Survey Compliance (50 points)
 - [ ] Better Auth implemented for signup/signin functionality
 - [ ] Custom signup form collects software/hardware background
-- [ ] User profiles used to personalize content (advanced modules for experts)
-- [ ] Per-chapter buttons added for personalization toggle
-- [ ] Bonus point tracking for personalization features
+- [ ] User profiles created and managed
+- [ ] Background information stored for personalization use
+- [ ] Authentication system integrated with Docusaurus
 
-### Multilingual Support Compliance
-- [ ] Per-chapter buttons added for Urdu translation
-- [ ] OpenAI API used for translation functionality
+### Personalization Toggle Compliance (50 points)
+- [ ] Per-chapter personalization buttons implemented
+- [ ] Content adaptation based on user background
+- [ ] Advanced modules shown for expert users
+- [ ] Personalization toggle functional for logged-in users
+- [ ] User preferences stored and applied consistently
+
+### Urdu Translation Toggle Compliance (50 points)
+- [ ] Per-chapter Urdu translation buttons implemented
+- [ ] OpenAI API integrated for translation functionality
 - [ ] Original English content preserved
 - [ ] Translations provided as overlays or toggles
-- [ ] Bonus point tracking for multilingual features
+- [ ] Translation system functional for logged-in users
 
-### Integrated RAG Chatbot Compliance (Requirement 2)
-- [ ] Fully functional RAG chatbot embedded using specified stack
-- [ ] OpenAI Agents/ChatKit SDKs integrated with FastAPI backend
-- [ ] Neon Serverless Postgres with pgvector configured for embeddings
-- [ ] Qdrant Cloud Free Tier used as vector store
-- [ ] Chatbot reachable from published Docusaurus book
-- [ ] Answers questions about entire book content
-- [ ] Answers questions based on user-selected/highlighted text only
-- [ ] Chatbot UI embedded as floating widget or /chat page
-- [ ] No modification to existing /docs/*.mdx content
-- [ ] All ingestion pipelines and backend services permitted
+### Content Protection Compliance
+- [ ] Existing /docs/ folder and all current files remain sacred and untouchable
+- [ ] No changes to folder's files content and structure without explicit permission
+- [ ] New chapter/module generation only with explicit human owner request
+
+### Single Branch Discipline Compliance
+- [ ] All AI work happens exclusively on opencode-ai branch
+- [ ] Automatic checkout/create opencode-ai after every /sp.* command
+- [ ] No other branches created, checked out, or referenced
+
+### Git Discipline Compliance
+- [ ] Automatic git add all changed files after every successful /sp.* command
+- [ ] Descriptive commit messages generated automatically
+- [ ] Automatic push to origin opencode-ai after every successful /sp.* command
+- [ ] No auto-commit or auto-push without explicit confirmation
+
+### opencode Exclusive Usage Compliance
+- [ ] Every occurrence of "Claude" replaced with "opencode" in all templates
+- [ ] Every occurrence of "Claude" replaced with "opencode" in all generated files
+- [ ] No other AI agents mentioned or referenced anywhere
+
+### Feature Scope Limitation Compliance
+- [ ] No blog features implemented
+- [ ] No multiplayer features implemented
+- [ ] No payment features implemented
+- [ ] No other features beyond mandatory scope implemented
 
 ## Project Structure
 
