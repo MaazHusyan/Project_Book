@@ -208,3 +208,10 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- Python 3.13 + FastAPI, Qdrant, Jina AI embeddings, Cohere embeddings (003-rag-retrieval-function)
+- Qdrant vector database for embeddings, with fallback to file-based storage (003-rag-retrieval-function)
+
+## Recent Changes
+- 003-rag-retrieval-function: Added Python 3.13 + FastAPI, Qdrant, Jina AI embeddings, Cohere embeddings
