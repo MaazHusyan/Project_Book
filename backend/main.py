@@ -8,6 +8,7 @@ import sys
 from contextlib import asynccontextmanager
 
 from src.retrieval.api.retrieval_endpoint import router as retrieval_router
+from src.api.agent_endpoint import router as agent_router
 # Remove the settings import as it's not needed for this implementation
 
 
@@ -55,6 +56,8 @@ app.add_middleware(
 
 # Include retrieval API routes
 app.include_router(retrieval_router)
+# Include agent API routes
+app.include_router(agent_router)
 
 
 @app.get("/")

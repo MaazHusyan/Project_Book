@@ -33,6 +33,17 @@ class Settings(BaseSettings):
     EMBEDDING_RATE_LIMIT_SECONDS: int = 60
     EMBEDDING_RETRY_ATTEMPTS: int = 3
 
+    # Agent Configuration (for chatbot integration)
+    GEMINI_API_KEY: Optional[str] = None
+
+    # OpenAI API Key (for tracing purposes)
+    OPENAI_API_KEY: Optional[str] = None
+
+    # OpenRouter Configuration (alternative to direct Gemini access)
+    OPENROUTER_KEY: Optional[str] = None
+    BASE_URL: Optional[str] = None
+    MODEL: Optional[str] = None
+
     # Rate limiting (with defaults)
     RATE_LIMIT_REQUESTS: int = 10
     RATE_LIMIT_SECONDS: int = 60
@@ -44,3 +55,8 @@ class Settings(BaseSettings):
 
 # Create a global settings instance
 settings = Settings()
+
+
+def get_settings():
+    """Return the global settings instance."""
+    return settings
