@@ -2,7 +2,7 @@
 
 **Purpose**: Validate specification completeness and quality before proceeding to planning
 **Created**: 2025-12-16
-**Feature**: specs/002-cohere-embedding-integration/spec.md
+**Feature**: [Link to spec.md](specs/002-cohere-embedding-integration/spec.md)
 
 ## Content Quality
 
@@ -31,4 +31,4 @@
 
 ## Notes
 
-- Specification is ready for planning phase
+- All items have been validated and meet the required standards.

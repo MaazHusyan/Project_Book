@@ -82,18 +82,32 @@
   Fill them out with the right functional requirements.
 -->
 
-### Functional Requirements
+### Educational Requirements
 
-- **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
-- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]  
-- **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
-- **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
-- **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- **ER-001**: Content MUST be accessible through chatbot interface to support practical application examples with code or real-world robotics case studies
+- **ER-002**: All theoretical concepts in the book MUST be retrievable through the chatbot to support practical application examples with code or real-world robotics case studies
+- **ER-003**: Chatbot responses MUST be validated by the book's content to ensure technical accuracy per constitution principle P1
+- **ER-004**: All mathematical formulations and code examples MUST be verified and validated per quality assurance requirements
+- **ER-005**: Chatbot responses MUST preserve the educational integrity and ethical considerations of the original robotics content per constitution principle P5
 
 *Example of marking unclear requirements:*
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+- **ER-006**: Content must address [NEEDS CLARIFICATION: specific technical detail requires expert validation]
+- **ER-007**: Implementation example needs [NEEDS CLARIFICATION: real-world application context not specified]
+
+### Technical Requirements
+
+- **TR-001**: The system MUST use OpenAI Agents/ChatKit SDKs for conversation and reasoning capabilities
+- **TR-002**: The system MUST use FastAPI for building the API endpoints and web interface
+- **TR-003**: The system MUST use Neon Serverless Postgres for storing conversation history and metadata
+- **TR-004**: The system MUST use Qdrant Cloud Free Tier for vector storage and similarity search
+- **TR-005**: The embedding pipeline MUST convert book content into vector representations for semantic search
+
+### Ethical Requirements
+
+- **ETH-001**: Chatbot responses MUST preserve the educational integrity and ethical considerations of the original robotics content
+- **ETH-002**: The system MUST not generate responses that contradict or misrepresent the book's content
+- **ETH-003**: All user interactions and data must be handled securely with proper authentication and privacy controls
 
 ### Key Entities *(include if feature involves data)*
 
