@@ -1,0 +1,233 @@
+openapi: 3.0.0
+info:
+  title: RAG Retrieval API
+  description: API for retrieving relevant book content to answer user queries and prevent hallucination
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Development server
+  - url: https://api.rag-chatbot.com
+    description: Production server
+
+paths:
+  /api/v1/retrieve:
+    post:
+      summary: Retrieve relevant book content for a user query
+      description: Searches the book content embeddings to find relevant information for answering the user's question
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RetrievalRequest'
+      responses:
+        '200':
+          description: Successfully retrieved relevant content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetrievalResponse'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/retrieve/batch:
+    post:
+      summary: Retrieve relevant content for multiple queries
+      description: Batch retrieval for multiple queries in a single request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BatchRetrievalRequest'
+      responses:
+        '200':
+          description: Successfully retrieved relevant content for all queries
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchRetrievalResponse'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    RetrievalRequest:
+      type: object
+      required:
+        - query
+      properties:
+        query:
+          type: string
+          description: The user's question or query
+          example: "What are the main principles of robot kinematics?"
+        top_k:
+          type: integer
+          description: Number of top results to return (default 5, max 10)
+          default: 5
+          minimum: 1
+          maximum: 10
+        filters:
+          type: object
+          description: Optional filters to apply to the search
+          properties:
+            source_file:
+              type: string
+              description: Filter by specific source file
+            min_relevance_score:
+              type: number
+              description: Minimum relevance score (0-1)
+              minimum: 0
+              maximum: 1
+              default: 0.5
+        context:
+          $ref: '#/components/schemas/QueryContext'
+
+    QueryContext:
+      type: object
+      description: Additional context for the query
+      properties:
+        selected_text:
+          type: string
+          description: Text selected by user to limit search scope
+        conversation_history:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        session_id:
+          type: string
+          description: Session identifier for maintaining conversation context
+
+    ChatMessage:
+      type: object
+      properties:
+        role:
+          type: string
+          enum: [user, assistant]
+          description: Role of the message sender
+        content:
+          type: string
+          description: Content of the message
+        timestamp:
+          type: string
+          format: date-time
+          description: When the message was created
+
+    RetrievalResponse:
+      type: object
+      required:
+        - query
+        - results
+        - retrieved_at
+      properties:
+        query:
+          type: string
+          description: The original user query
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/RetrievedContent'
+        retrieved_at:
+          type: string
+          format: date-time
+          description: When the retrieval was performed
+        has_results:
+          type: boolean
+          description: Whether any relevant results were found
+
+    BatchRetrievalRequest:
+      type: object
+      required:
+        - queries
+      properties:
+        queries:
+          type: array
+          items:
+            $ref: '#/components/schemas/RetrievalRequest'
+          maxItems: 10
+        top_k:
+          type: integer
+          description: Number of top results to return for each query (default 5, max 10)
+          default: 5
+          minimum: 1
+          maximum: 10
+
+    BatchRetrievalResponse:
+      type: object
+      required:
+        - results
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/RetrievalResponse'
+
+    RetrievedContent:
+      type: object
+      required:
+        - id
+        - content
+        - source_file
+        - source_location
+        - relevance_score
+      properties:
+        id:
+          type: string
+          description: Unique identifier for this retrieved content
+        content:
+          type: string
+          description: The actual content text
+        source_file:
+          type: string
+          description: Name of the source file
+        source_location:
+          type: string
+          description: Location within the source (chapter, section, etc.)
+        relevance_score:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+          description: Relevance score (0-1) for the content
+        chunk_id:
+          type: string
+          description: ID of the original content chunk
+        metadata:
+          type: object
+          description: Additional metadata about the content
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+        - message
+      properties:
+        error:
+          type: string
+          description: Error code
+        message:
+          type: string
+          description: Human-readable error message
+        details:
+          type: object
+          description: Additional error details (optional)
