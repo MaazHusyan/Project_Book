@@ -1,0 +1,174 @@
+# MCP Server Configuration for Context7Parser
+version: 1.0
+
+servers:
+  - name: context7-parser
+    type: http
+    endpoint: http://localhost:8081/api
+    timeout: 60000  # 60 seconds for potentially long parsing operations
+    retry_policy:
+      max_retries: 3
+      backoff: exponential
+      initial_delay: 1000  # 1 second
+
+    auth:
+      type: bearer
+      token_env: CONTEXT7_API_KEY
+
+    capabilities:
+      - name: parse_repository
+        description: "Parse a code repository or website into structured AI context"
+        input_schema:
+          type: object
+          required: ["url", "type"]
+          properties:
+            url:
+              type: string
+              description: "URL of the repository or website to parse"
+              pattern: "^(https?://)[\\w\\.-]+"
+            type:
+              type: string
+              enum: ["repository", "website"]
+              description: "Type of content to parse"
+            options:
+              type: object
+              description: "Parsing options"
+              properties:
+                includeTests:
+                  type: boolean
+                  default: false
+                  description: "Include test files in parsing"
+                maxDepth:
+                  type: integer
+                  minimum: 1
+                  maximum: 10
+                  default: 5
+                  description: "Maximum directory depth to traverse"
+                excludePatterns:
+                  type: array
+                  items:
+                    type: string
+                  default: ["node_modules", "dist", ".git"]
+                  description: "Patterns to exclude from parsing"
+        output_schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+            projectId:
+              type: string
+            status:
+              type: string
+            estimatedTime:
+              type: integer
+            message:
+              type: string
+        security:
+          scopes: ["parse:repository", "parse:website"]
+          rate_limits:
+            requests_per_minute: 30
+            concurrent_requests: 3
+
+      - name: get_project_status
+        description: "Get the status of a parsing project"
+        input_schema:
+          type: object
+          required: ["projectId"]
+          properties:
+            projectId:
+              type: string
+              description: "Unique identifier for the project"
+        output_schema:
+          type: object
+          properties:
+            projectId:
+              type: string
+            status:
+              type: string
+              enum: ["queued", "processing", "completed", "failed", "pending"]
+            progress:
+              type: object
+              properties:
+                filesProcessed:
+                  type: integer
+                totalFiles:
+                  type: integer
+                percentage:
+                  type: number
+            metadata:
+              type: object
+              additionalProperties: true
+        security:
+          scopes: ["status:read"]
+
+      - name: refresh_project
+        description: "Refresh an existing project by re-parsing"
+        input_schema:
+          type: object
+          required: ["projectId"]
+          properties:
+            projectId:
+              type: string
+              description: "Unique identifier for the project"
+            forceRebuild:
+              type: boolean
+              default: false
+              description: "Force a complete rebuild instead of incremental update"
+        output_schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+            projectId:
+              type: string
+            status:
+              type: string
+            previousVersion:
+              type: string
+            message:
+              type: string
+        security:
+          scopes: ["parse:refresh"]
+
+      - name: search_context
+        description: "Search through parsed project context using vector search"
+        input_schema:
+          type: object
+          required: ["projectId", "query"]
+          properties:
+            projectId:
+              type: string
+              description: "Unique identifier for the project"
+            query:
+              type: string
+              description: "Search query for semantic code search"
+            limit:
+              type: integer
+              minimum: 1
+              maximum: 50
+              default: 10
+              description: "Maximum number of results to return"
+        output_schema:
+          type: object
+          properties:
+            results:
+              type: array
+              items:
+                type: object
+                properties:
+                  file:
+                    type: string
+                  lines:
+                    type: string
+                  score:
+                    type: number
+                  content:
+                    type: string
+                  context:
+                    type: string
+            totalResults:
+              type: integer
+            queryTime:
+              type: integer
+        security:
+          scopes: ["search:read"]

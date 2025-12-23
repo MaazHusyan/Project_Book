@@ -1,0 +1,29 @@
+{
+  "name": "context7-mcp-adapter",
+  "version": "1.0.0",
+  "description": "MCP Adapter for Context7Parser integration with Claude Code",
+  "main": "context7-mcp-adapter.js",
+  "type": "module",
+  "scripts": {
+    "start": "node context7-mcp-adapter.js",
+    "dev": "nodemon context7-mcp-adapter.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "mcp",
+    "claude",
+    "context7",
+    "ai",
+    "code-parsing"
+  ],
+  "author": "Robotics Book Project",
+  "license": "MIT"
+}

@@ -21,3 +21,6 @@ yarn-error.log*
 
 frontend/node_modules
 frontend/docusaurus.config.js.backup
+
+context7-mcp/.mcp/node_modules
+context7-mcp/.mcp/.env
